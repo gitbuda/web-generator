@@ -1,6 +1,6 @@
 # Simple Static Web Generator
 
-```python
+```bash
 python generator.py --help
 ```
 
@@ -15,6 +15,7 @@ index:
     index_template: index.html # Relative to the templates_directory.
 copy:
     files:
+        #- [src_path, dst_path] # dst_path is relative to the site_directory.
         - [asset/image/image.jpg, images/image.jpg]
         - [asset/style/style.css, style/style.css]
 blog:
