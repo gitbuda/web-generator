@@ -121,8 +121,8 @@ def generate_blog(context: BlogContext):
             post=post_content_html,
             post_id=post_id,
             post_url=post_url).dump(post_html_path)
-        # Artefacts are re referenced from the generated files.
-        # The only supported operation for now is copy.
+        # Artefacts are referenced from the generated files.
+        # The only supported operation is copy for now.
         if 'artefacts' in post:
             for artefact in post['artefacts']:
                 src = join(post_content_directory, artefact)
