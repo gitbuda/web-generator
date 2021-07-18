@@ -1,5 +1,5 @@
 docopt==0.6.2
-Jinja2==2.11.1
+Jinja2==2.11.3
 Markdown==3.2.1
 Pygments==2.7.4
 PyYAML==5.3.1
