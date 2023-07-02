@@ -44,6 +44,7 @@ class IndexContext:
     output_directory: str
     template: Template
     posts: List
+    videos: List
 
 
 def generate_index(context: IndexContext):
@@ -53,7 +54,8 @@ def generate_index(context: IndexContext):
         context: All data required to generate the index file.
     """
     context.template.stream(
-        posts=context.posts).dump(join(context.output_directory, 'index.html'))
+        posts=context.posts,
+        videos=context.videos).dump(join(context.output_directory, 'index.html'))
 
 
 @dataclass
@@ -154,7 +156,8 @@ def generate_web(descriptor):
     index_context = IndexContext(
         descriptor['site_directory'],
         index_template,
-        descriptor['blog']['posts'])
+        descriptor['blog']['posts'],
+        descriptor['video']['youtubes'])
     generate_index(index_context)
 
     # Copy assets.
